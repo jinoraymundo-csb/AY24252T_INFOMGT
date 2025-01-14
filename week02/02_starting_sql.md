@@ -38,7 +38,7 @@ To read data from a table, you use the `SELECT` keyword:
 SELECT * FROM customers;
 ```
 
-// image here
+![select all](images/select_all.png)
 
 > [!IMPORTANT]
 > This is called a `SELECT` **statement** and will fetch all the rows from the `customers` table.
@@ -115,7 +115,7 @@ SELECT id, givenname, familyname
 FROM customers;
 ```
 
-// image here
+![select columns](images/select_columns.png)
 
 This selects three columns; it still selects all rows.
 The column list is separated by commas:
@@ -179,7 +179,7 @@ SELECT
 FROM customers; 
 ```
 
-// image here
+![select calculated columns](images/select_calculated_columns.png)
 
 In the customers table, height is measured in centimeters. For those who prefer an empirical measurement, you can convert to inches by dividing by 2.54
 
@@ -200,7 +200,7 @@ SELECT
 FROM customers;
 ```
 
-// image here
+![select aliases](images/select_aliases.png)
 
 ## Comments
 
@@ -290,6 +290,8 @@ FROM customers
 WHERE state='NSW';
 ```
 
+![select filter](images/select_filter.png)
+
 The expression `state='NSW'` is called an **assertion** and is either `true` or `false`. The `WHERE` clause selects only those rows where the assertion is `true`.
 
 Note the single quotes `' ... '` around the `NSW`. In SQL, text values are called **strings** and are enclosed in single quotes. Don't use double quotes `" ... "` because most DBMSs will interpret double quotes differently. Also, note that the string is in UPPER CASE, which matches the data in the customers table. In some DBMSs, you can also use lower case, but not in others.
@@ -352,7 +354,7 @@ WHERE state='NSW'
 ORDER BY familyname, givenname;
 ```
 
-// image here
+![select order by](images/select_order_by.png)
 
 In this example, you order the results by `familyname` and, in the event of a tie, by the `givenname`.
 
@@ -386,7 +388,7 @@ Sometimes, you will need to interpret what somebody asks for. For example, if yo
 SELECT email FROM customers;
 ```
 
-// image here
+![select all email](images/select_email.png)
 
 On the other hand, if you want a list of states, the following is probably not what you want:
 
@@ -394,7 +396,7 @@ On the other hand, if you want a list of states, the following is probably not w
 SELECT state FROM customers;
 ```
 
-// image here
+![select all state](images/select_state.png)
 
 You will, of course, get a list of all of the state values (as well as a few NULLs which represent missing values). However, you probably don't want the duplicates. If you want one of each, you will need to use `DISTINCT`:
 
@@ -402,7 +404,7 @@ You will, of course, get a list of all of the state values (as well as a few NUL
 SELECT DISTINCT state FROM customers;    -- one of each
 ```
 
-// image here
+![select distinct state](images/select_distinct_state.png)
 
 Using `DISTINCT` treats each value not as an individual value but as a group. You can say that you now have the state groups
 
@@ -414,7 +416,7 @@ The `DISTINCT` operator acts only on what is in the `SELECT` clause. If you add 
 SELECT DISTINCT state, town FROM customers; -- one of each
 ```
 
-// image here
+![select distinct state town](images/select_distinct_state_town.png)
 
 Here, you will get distinct *combinations* of state and town. In the result set, it's not the `state` which is distinct nor the `town`, it's the combination. We can say that we now have state/town groups.
 
