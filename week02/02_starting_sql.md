@@ -420,6 +420,7 @@ SELECT DISTINCT state, town FROM customers; -- one of each
 
 Here, you will get distinct *combinations* of state and town. In the result set, it's not the `state` which is distinct nor the `town`, it's the combination. We can say that we now have state/town groups.
 
-> [!NOTE] Again, you will see the `NULL` as a separate group. In this set of data, there is no state without a town and vice versa, which is why there’s only one group with `NULLs`.
+> [!NOTE]
+> Again, you will see the `NULL` as a separate group. In this set of data, there is no state without a town and vice versa, which is why there’s only one group with `NULLs`.
 
 ---
