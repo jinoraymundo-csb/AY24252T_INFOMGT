@@ -24,6 +24,6 @@ e.g.
 1. CREATE statement for your chosen database table
 2. TRUNCATE statement to clear your table's records
 3. INSERT statement to add at least 20 records to your chosen database table
-4. UPDATE statement to modify the last record in your chosen database table (apply a WHERE clause)
-5. DELETE statement to remove the 4th record in your chosen database table (apply a WHERE clause)
+4. ~UPDATE statement to modify the last record in your chosen database table (apply a WHERE clause)~
+5. ~DELETE statement to remove the 4th record in your chosen database table (apply a WHERE clause)~
 
