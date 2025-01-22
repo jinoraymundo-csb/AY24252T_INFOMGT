@@ -1,5 +1,5 @@
 Come up with a real-world example of a database object (table), preferably within your interest group
-e.g. Movies, TV Series, Celebrities. Ensure that you are able to identify 5 properties:
+e.g. Movies, TV Series, Celebrities. Ensure that you are able to identify 4 properties:
 
 - a unique name 
 - text property that cannot be blank
