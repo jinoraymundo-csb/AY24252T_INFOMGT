@@ -33,7 +33,7 @@ CREATE TABLE Crop (
     SellingPrice DECIMAL(10, 2)
 );
 
-INSERT INTO Car (CropID, Name, CropType, SellingPrice)
+INSERT INTO Crop (CropID, Name, CropType, SellingPrice)
   VALUES
 (1, 'Cauliflower', 'Vegetable', 175.00),
 (2, 'Melon', 'Fruit', 250.00),
