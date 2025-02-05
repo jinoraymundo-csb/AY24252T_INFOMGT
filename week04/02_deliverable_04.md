@@ -5,7 +5,7 @@
 1. Download the `week04\scripts\movies.sql` file from this repo
 2. On SSMS, Click on File -> Open -> File...
 3. Locate the downloaded SQL script file from #1
-4. On the Query Window in SSMS, replace line #1 to reflect your database name e.g. `USE [INFOMGT_TCS1]` to `USE [INFOMGT_TCS1_raymundo]`
+4. On the Query Window in SSMS, replace line #1 to reflect your database name e.g. `USE [INFOMGT_TCS2]` to `USE [INFOMGT_TCS2_raymundo]`
 5. Save the file
 6. Execute the entire script
 
