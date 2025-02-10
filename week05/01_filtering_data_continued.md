@@ -14,7 +14,7 @@ To get the results:
 1. From the `sales` table, get the `customerid`s where the `total`
 exceeds some value.'
 
-2. From the `customers` table, get the date for customers whose id matches the results of the first step
+2. From the `customers` table, get the data for customers whose id matches the results of the first step
 
 For the first step:
 
