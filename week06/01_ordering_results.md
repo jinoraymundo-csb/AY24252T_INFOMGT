@@ -74,7 +74,7 @@ ORDER BY id DESC;
 The SQL standard is vague about how `NULL`s should be treated by `ORDER BY`.
 The only requirement is that they should be grouped together, either at the beginning or at the end.
 
-In Microsoft SQL Server, sorting with `NULL` values group them at the end.
+In Microsoft SQL Server, sorting with `NULL` values group them at the beginning.
 
 > [!TIP]
 > There is a workaround to "replace" `NULL` values in `SELECT` statements:
