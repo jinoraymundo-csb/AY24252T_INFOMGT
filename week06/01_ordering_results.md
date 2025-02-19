@@ -124,7 +124,7 @@ The fact that data type influences sort order is one reason why it's important t
 SELECT * FROM sorting ORDER BY numbervalue;
 
 -- sorted as string
-SELECT * FROM sorti ng ORDER BY numberstring;
+SELECT * FROM sorting ORDER BY numberstring;
 ```
 
 You will see that the string version is sorted strictly in alphabetical order, from left to right, while the suitably typed version is sorted more appropriately.
