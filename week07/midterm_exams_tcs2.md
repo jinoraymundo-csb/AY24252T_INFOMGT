@@ -23,7 +23,6 @@ CREATE TABLE airports (
   city_province nvarchar(200) NULL,  
   runway_meters int NOT NULL,
   area_served nvarchar(200) NULL,
-  
   opened date,
   CONSTRAINT UI_IATA UNIQUE(IATA),
   CONSTRAINT UI_ICAO UNIQUE(ICAO),
