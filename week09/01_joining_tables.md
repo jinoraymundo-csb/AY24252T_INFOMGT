@@ -63,7 +63,7 @@ SELECT *
 > SELECT * FROM artists JOIN paintings ON artists.id = paintings.artistid;
 > ```
 
-![First Join Reversed](images/04_first_join_reversed.png)
+![First Join Reversed](images/05_first_join_reversed.png)
 
 ### B. Alternative (Original) Syntax
 
