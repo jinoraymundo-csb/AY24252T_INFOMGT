@@ -26,6 +26,8 @@ SELECT count(*)
 FROM customers;
 ```
 
+![count all](images/01_count_all.png)
+
 > [!NOTE]
 > The `count(*)` function counts all the rows. There is, of course, much more than that
 
@@ -40,13 +42,13 @@ The preceding `count()` function is a special case: `count(*)` counts all the *r
 
 ```
 SELECT count(*) AS countrows
-FROM customers;
+FROM customers
 WHERE height < 160.5;
 ```
 
 in which case, you will count the number of rows which match the criterion
 
-[] TODO add image
+![count all with where](images/02_count_all_with_where.png)
 
 ## Counting Values
 
@@ -65,7 +67,7 @@ FROM customers;
 
 Which yields the following summary:
 
-[] TODO add image
+![counting values](images/03_counting_values.png)
 
 > [!NOTE]
 > The number of rows will be the same as the number of `ids` and the number of `emails` and `familynames`. However, it is not the same for `phones` and `states`. When counting values
@@ -96,6 +98,8 @@ FROM customers
 GROUP BY ()
 ```
 
+![how aggregates work](images/04_how_aggregates_work.png)
+
 The `GROUP BY ()` clause means that the original table (`customers`) is to be summarized. It doesn't actually change anything, because it's implied whenever SQL encounters aggregate functions, such as `count()`
 
 ---
@@ -108,11 +112,15 @@ Most of the paintings have a price value. You can count how many with:
 SELECT count(price) FROM paintings;
 ```
 
+![count all paintings](images/05_count_all_paintings.png)
+
 Sometimes, you might want to count only some of these, such as the cheaper paintings or the more expensive ones.You could try this:
 
 ```
 SELECT count(price) FROM paintings WHERE price < 130;
 ```
+
+![count all paintings with where](images/06_count_all_paintings_with_where.png)
 
 This will work, but you can't also include other summaries at the same time; you would need a separate query.
 
@@ -133,7 +141,7 @@ SELECT
 FROM paintings;
 ```
 
-[] TODO add image
+![case when end](images/07_case_when_end.png)
 
 In particular, you can use a simple version just to highlight the cheap ones:
 
@@ -144,7 +152,7 @@ SELECT
 FROM paintings;
 ```
 
-[] TODO add image
+![case when end simple](images/07_case_when_end_simple.png)
 
 Back to aggregates, if we want to count the "cheap" paintings, we use the `CASE ... END` expression to set the values at 1, and count the results:
 
@@ -153,7 +161,7 @@ SELECT count(CASE WHEN price < 130 THEN 1 END) AS cheap
 	FROM paintings;
 ```
 
-[] TODO add image
+![count cheap paintings](images/08_count_cheap_paintings.png)
 
 > [!TIP] Remember that the ones that don't match will have a `NULL`, and aggregate functions always skip `NULL`, so they won't be counted.
 
@@ -167,7 +175,7 @@ SELECT
 FROM paintings;
 ```
 
-[] TODO add image
+![count categorized paintings](images/09_count_categorized_paintings.png)
 
 ---
 
@@ -180,6 +188,8 @@ SELECT
   count(state) AS states
 FROM customers;
 ```
+
+![count states](images/10_count_states.png)
 
 However, if you want to answer the question: "How many unique states are there in the customers table?":
 
@@ -195,7 +205,7 @@ However, if you want to answer the question: "How many unique states are there i
   FROM customers;
 ```
 
-[] TODO add image
+![list and count unique states](images/11_list_and_count_unique_states.png)
 
 ---
 
@@ -212,6 +222,8 @@ SELECT
   stdev(height) AS sd
 FROM customers;
 ```
+
+![summarizing numbers](images/12_summarizing_numbers.png)
 
 > [!NOTE]
 > The `sum()` function adds all the values in the column, and the `avg()` function calculates the average of the values. In the preceding example, the average is also calculated using the `sum/count` formula, and you see that it gives the same result; in principle, the `avg()` function is just a convenience.
@@ -233,7 +245,7 @@ SELECT
 FROM customers;
 ```
 
-[] TODO add image
+![summarizing numbers inaccurate](images/13_summarizing_numbers_innacurate.png)
 
 Notes:
 
@@ -286,13 +298,13 @@ The difference between numbers has meaning, but there is no fixed zero
 
  ## Aggregating Calculated Data
 
- The `salesitems` table includes some data which is worth summarizing:
+ The `saleitems` table includes some data which is worth summarizing:
 
  ```
-SELECT * FROM salesitems;
+SELECT * FROM saleitems;
  ```
 
-[] TODO add image
+![saleitems](images/14_saleitems.png)
 
 This includes a quantity column, which is the number of copies of each item, and a `price` column which is the price *per copy* of each item.
 
@@ -315,7 +327,7 @@ FROM saleitems;
 
 which yields:
 
-[] TODO add image
+![missing quantities](images/15_missing_quantities.png)
 
 It should..... but there's a problem. Recall that some of the quantities are missing, so you had to coalesce the `NULL`s to 1 which is the presumed meaning. You'll have to do the same with the summary. Otherwise, that's erroneous data.
 
@@ -328,15 +340,7 @@ FROM saleitems;
 
 which should yield a more accurate result:
 
-[] TODO add image
-
-The `total_value` from the previous result should match the same value from the `sales` table:
-
-```
-SELECT sum(total) FROM sales;
-```
-
-[] TODO add image
+![accurate quantities](images/16_accurate_quantities.png)
 
 ---
 
@@ -354,7 +358,7 @@ SELECT
 FROM customers;
 ```
 
-[] TODO add image
+![min max](images/17_minmax.png)
 
 > [!IMPORTANT]
 > The `max()` and `min()` functions give you what would have been at the extreme ends of an `ORDER BY` clause, except that, as usual, they omit any `NULL` which might turn up.
